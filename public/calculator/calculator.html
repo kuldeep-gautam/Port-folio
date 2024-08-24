@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }  
+        .calculator{
+            max-width:300px;
+            width:100%;
+            border: 2px solid rgb(19, 18, 18);
+            padding: min(5%,15px);
+            margin: 5% auto;
+        }
+        .calculator input{
+            width: 100%;
+            height: 5rem;
+            border: none;
+            box-shadow: .2px 0.5px 3px black;
+            font-size: 1.5rem;
+            padding: 10px;
+            text-align: end;
+            
+        }
+        .btn-group{
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0px;
+
+        }
+        button{
+            width: 3rem;
+            height: 3rem;  
+            border-radius: 100%;
+            border: none;
+            box-shadow: 1px 1px 5px black;
+            font-weight: bold;
+        }
+        @media screen and (max-width:500px) {
+            .calculator{
+            width:90%;
+            margin: auto auto;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="inpContainer" readonly>
+        <div class="btn-group">
+            <button onclick="btnCLick('clear')" style="background-color: rgb(209, 19, 19);">AC</button>
+            <button onclick="btnCLick('del')">DE</button>
+            <button onclick="btnCLick('%')">%</button>
+            <button onclick="btnCLick('/')">/</button>
+        </div>
+        <div class="btn-group">
+            <button onclick="btnCLick('7')">7</button>
+            <button onclick="btnCLick('8')">8</button>
+            <button onclick="btnCLick('9')">9</button>
+            <button onclick="btnCLick('*')">*</button>
+        </div>
+        <div class="btn-group">
+            <button onclick="btnCLick('4')">4</button>
+            <button onclick="btnCLick('5')">5</button>
+            <button onclick="btnCLick('6')">6</button>
+            <button onclick="btnCLick('+')">+</button>
+        </div>
+        <div class="btn-group">
+            <button onclick="btnCLick('1')">1</button>
+            <button onclick="btnCLick('2')">2</button>
+            <button onclick="btnCLick('3')">3</button>
+            <button onclick="btnCLick('-')">-</button>
+        </div>
+        <div class="btn-group ">
+            <button onclick="btnCLick('00')">00</button>
+            <button onclick="btnCLick('0')">0</button>
+            <button onclick="btnCLick('.')">.</button>
+            <button onclick="resultCLick()" style="background-color: orange;">=</button>
+        </div>
+    </div>
+    <script>
+        let resultContainer = document.querySelector("#inpContainer");
+        resultContainer.value='';
+        let evlValue='';
+        let result;
+        function btnCLick(value){
+            if(value==='clear'){
+                evlValue='';
+                resultContainer.value=evlValue;
+            }else if(value==='del'){
+                evlValue= evlValue.slice(0,-1);
+                resultContainer.value= evlValue;
+            } else {
+                evlValue=evlValue+value;
+                resultContainer.value= evlValue;
+            }
+        }
+        function resultCLick(){
+            result=eval(evlValue);
+            evlValue=result;
+            resultContainer.value=result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stone Paper Scissor</title>
+  <style>
+    .container{
+      max-width: 90%;
+      width: 300px;
+      margin: auto auto;
+      border: 2px solid gray;
+      padding: 10px 20px;
+      align-items: center;
+    }
+    .container > *{
+      text-align: center;
+    }
+    .result{
+      background-color: rgb(207, 188, 188); 
+      padding: 10px; margin-top: 20px;
+      text-shadow: 5px 5px 20px black;
+      font-size: 20px;
+      color: white;
+    }
+    .roundShow{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Ston Paper Scisssor</h2>
+    <div onclick="btnClick(event)">
+      <button id="stone">Stone</button>
+      <button id="paper">Paper</button>
+      <button id="scissor">Scissor</button>
+    </div>
+    <div class="result">Score will show here</div>
+    <div class="roundShow">
+      <div>User: <span id="userCount"></span></div>
+      <div>Computer: <span id="compCount"></span></div>
+      <div>Draw:<span id="drawCount"></span></div>
+    </div>
+  </div>
+  <script>
+    let result=document.querySelector(".result");
+    result.style.textShadow='2px 2px 19px black';
+    let userCountShow=document.querySelector("#userCount");
+    let compCountShow=document.querySelector("#compCount");
+    let drawCountShow=document.querySelector("#drawCount");
+
+    let userCount=0;
+    let compCount=0;
+    let drawCount=0;
+
+    userCountShow.innerHTML=userCount;
+    compCountShow.innerHTML=compCount;
+    drawCountShow.innerHTML=drawCount;
+    
+    function btnClick(e){
+      let randomNo= Math.floor(Math.random() * 3);
+      let computerChoise;
+      
+      if(randomNo===1){
+        computerChoise="stone";
+      }else if(randomNo===2){
+        computerChoise="paper";
+      }else{
+        computerChoise="scissor";
+      }
+     
+      let userChoice=e.target.id;
+      
+      if(userChoice==='stone'){
+        if(computerChoise==='scissor'){
+          result.innerHTML=`You choose ${userChoice}. Computer choice ${computerChoise}. You won`;
+          result.style.color='green';
+          userCount++;
+          userCountShow.innerHTML=userCount;
+        }else if(computerChoise==='paper'){
+          result.innerHTML=`You choose ${userChoice}. Computer choice ${computerChoise}. You lost`;
+          result.style.color='red';
+          compCount++;
+          compCountShow.innerHTML=compCount;
+        }else{
+          result.innerHTML=`You choose ${userChoice}. Computer choice ${computerChoise}. Match draw`;
+          result.style.color='yellow';
+          drawCount++;
+          drawCountShow.innerHTML=drawCount;
+        }
+      }else if(userChoice==='paper'){
+        if(computerChoise==='stone'){
+          result.innerHTML=`You choose ${userChoice}. Computer choice ${computerChoise}. You won`;
+          result.style.color='green';
+          userCount++;
+          userCountShow.innerHTML=userCount;
+        }else if(computerChoise==='scissor'){
+          result.innerHTML=`You choose ${userChoice}. Computer choice ${computerChoise}. You lost`;
+          result.style.color='red';
+          compCount++;
+          compCountShow.innerHTML=compCount;
+        }else{
+          result.innerHTML=`You choose ${userChoice}. Computer choice ${computerChoise}. Match draw`;
+          result.style.color='yellow';
+          drawCount++;
+          drawCountShow.innerHTML=drawCount;
+        }
+      }else {
+        if(computerChoise==='paper'){
+          result.innerHTML=`You choose ${userChoice}. Computer choice ${computerChoise}. You won`;
+          result.style.color='green';
+          userCount++;
+          userCountShow.innerHTML=userCount;
+        }else if(computerChoise==='stone'){
+          result.innerHTML=`You choose ${userChoice}. Computer choice ${computerChoise}. You lost`;
+          result.style.color='red';
+          compCount++;
+          compCountShow.innerHTML=compCount;
+        } else{
+          result.innerHTML=`You choose ${userChoice}. Computer choice ${computerChoise}. Match draw`;
+          result.style.color='yellow';
+          drawCount++;
+          drawCountShow.innerHTML=drawCount;
+        }
+      }
+    }
+  </script>
+</body>
+</html>

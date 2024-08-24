@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      height: 100vh;
+      background-color: lightgrey;
+    }
+    header{
+      text-align: center; 
+      background-color: grey;
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      padding: 10px;
+    }
+    .rootContainer{
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .container{
+      width: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      border: 2px solid grey;
+    }
+    .box{
+      width: 33.3%;
+      height: 100px;
+      border: none;
+      box-shadow: 2px 2px 10px black;
+      font-size: 30px;
+      color: black;
+    }
+    button:hover{
+      background-color: lightgray;
+    }
+    .result-container{
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    .greet{
+      font-size: 40px;
+
+    }
+    .result{
+      font-size: 30px;
+    }
+    .hide{
+      display: none;
+    }
+    .newGame,.resetGame{
+      background-color: green;
+      border-radius: 10px;
+      padding: 5px 10px;
+      color: white;
+      margin-top: 10px;
+
+    }
+    .count{
+      text-align: center;
+      color: green;
+      font-size: 25px;
+    }
+    .count span{
+      margin-right:20px ;
+    }
+    .decision{
+      text-align: center;
+      font-size: 20px;
+      margin-top: 15px;
+      color: white;
+      font-weight: bold;
+      text-shadow: 2px 2px 10px black;
+    }
+   
+  </style>
+</head>
+<body>
+  <header>Tic Tic Toe</header>
+  <div class="count">
+    Player X: <span id="countX"></span> 
+    Player O: <span id="countO"></span> 
+  </div>
+  <div class="decision">X turn</div>
+
+  <div class="result-container hide">
+    <div class="greet">congratulation...</div>
+    <div class="result" id="result"></div>
+    <button class="newGame">New Game</button>
+  </div>
+  <div class="rootContainer">
+    <div onclick="btnClick(event)" class="container">
+        <button id="ww1" class="box"></button>
+        <button id="ww2" class="box"></button>
+        <button id="ww3" class="box"></button>
+        <button id="ww4" class="box"></button>
+        <button id="ww5" class="box"></button>
+        <button id="ww6" class="box"></button>
+        <button id="ww7" class="box"></button>
+        <button id="ww8" class="box"></button>
+        <button id="ww9" class="box"></button>
+    </div>
+    <button class="resetGame">Reset Game</button>
+  </div>
+  <script src="../../src/ticTacToe2.js"></script>
+</body>
+</html>

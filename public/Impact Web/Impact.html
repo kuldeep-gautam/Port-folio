@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style type="text/css">
+        body{
+           
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .top{
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 0rem 7rem 0rem 7rem;
+            background-color: #00796b;
+            height: 40px;
+            align-items: center;
+        }
+        .top span{
+            margin-right: 12px;
+        }
+        .brand-name{
+            font-size: 2rem;
+            color: white;
+        }
+        nav select{
+           background-color: #008374;
+           border: none;
+           color: white;
+           width: 6.5rem;
+        }
+        nav select option{
+            color: #008374;
+            background-color: white;
+            font-weight: bold;
+        }
+        nav{
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 0rem 7rem 0rem 7rem;
+            background-color: #008374;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+        nav ol{
+            list-style:none ;
+        }
+        nav ol li{
+            display: inline;
+            margin-right: 2rem;
+        }
+        section {
+            background-color:#008374;
+            color: white;
+            padding: 3rem 2rem 10rem 2rem;
+     
+        }
+        .impact {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            align-items: center;
+            
+            }
+        .o1 {
+            font-weight: bold;
+            font-size: 3.7rem;
+            margin: 10px;
+           }
+           .o2 {
+            color: darkgray;
+            font-size: 19px;
+            margin: 15px;
+           
+           }
+           .o3 {
+            border-radius: 30px;
+            padding:.8rem 2.5rem .8rem 2.5rem;
+            background-color:#008374;
+            color: white;
+            border: gray 1px solid;
+            margin: 10px;
+            
+          }
+          .o4 {
+            font-weight: bold;
+            color: white; 
+            background-color: transparent;
+            display:inline-flex;
+            border: none;
+            align-items: center;
+           
+            
+            
+             }
+             .bi-play-circle {
+                font-size: 35px;
+                color: rgba(255,255,255,0.3);
+                padding: 10px;
+                
+             }
+             .card .bi{
+                font-size: 2.5rem;
+             }
+             .card{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 250px;
+                height: 250px;
+                background-color: #008374;
+                color: white;
+                font-weight: bold;
+                font-size: 1.8rem;
+                margin-right: 30px;
+                border: none;
+                box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+             }
+             .card div{
+                text-align: center;
+             }
+             .cards{
+                display: flex;
+                justify-content: center;
+                margin-top: -8rem;
+             }
+             
+    </style>
+</head>
+<body>
+    <header>
+       <div class="top">
+        <div><span class="bi bi-envelope"> contact@example.com</span><span class="bi bi-phone"> +1 5589 55488 55</span> </div>
+        <div><span class="bi bi-twitter"></span> <span class="bi bi-facebook"></span><span class="bi bi-instagram"></span><span class="bi bi-linkedin"></span></div>
+       </div>
+       <nav>
+        <div class="brand-name">Impact<span style="color: orangered;">.</span></div>
+        <ol>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Portfolio</li>
+            <li>Team</li>
+            <li>Blog</li>
+            <li><select> 
+                <option>Drop Down</option>
+                <option>Drop Down 1</option>
+                <option>Deep Drop Down</option>
+                <option>Drop Down 2</option>
+                <option>Drop Down 3</option>
+                <option>Drop Down 4</option>
+            </select> </li>
+            <li>Contact</li>
+        </ol>
+       </nav>
+    </header>
+    <section>
+        <div class="impact">
+            <div>
+                <div class="o1">Welcome to Impact</div>
+            <div class="o2">Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</div>
+            <button class="o3">Get Started</button>
+            <button class="o4"><span class="bi bi-play-circle"></span>Watch video</button>
+            </div>
+                <div>
+                    <img src="../images/impact.JPG" alt="">
+                </div>
+        </div>
+    </section>
+    <article>
+        <div class="cards">
+            <div class="card">
+                <div><span class="bi bi-easel"></span></div>
+                <div>Lorem Ipsum </div>
+            </div>
+            <div class="card">
+                <div><span class="bi bi-gem"></span></div>
+                <div>Sed ut perspiciatis</div>
+            </div>
+            <div class="card">
+                <div><span class="bi bi-geo-alt"></span></div>
+                <div>Magni Dolores</div>
+            </div>
+            <div class="card">
+                <div><span class="bi bi-command"></span></div>
+                <div>Nemo Enim</div>
+            </div>
+        </div>
+    </article>
+</body>
+</html>
